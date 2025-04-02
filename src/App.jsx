@@ -1,15 +1,21 @@
 // App.jsx
 import React from "react";
-import {Web3Provider} from "./components/webProvider"
-import { ConnectKitButton } from "connectkit";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Web3Provider } from "./components/webProvider";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <Web3Provider>
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-2xl font-bold mb-4">Welcome to the Wallet Page</h1>
-        <ConnectKitButton />
-      </div>
+      <Navbar/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
     </Web3Provider>
   );
 };
