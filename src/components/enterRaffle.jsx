@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { readContract } from "@wagmi/core";
 import { abi, contractAddress } from "../constants/index";
-import { config } from "./webProvider"; // Import your provider config
+// import { config } from "./webProvider"; // Import your provider config
 import { getClient } from "./client";
 import { parseEther } from "viem";
 import { ethers } from "ethers";
+// import { writeContract } from "@wagmi/core";
+// import { useAccount } from "wagmi";
+import { walletClient } from "./client";
 
 const EnterRaffle = () => {
   const [entranceFee, setEntranceFee] = useState(null);
@@ -26,21 +29,19 @@ const EnterRaffle = () => {
     fetchEntranceFee();
   }, []);
 
-  const fund = async () => {
+  const enterRaffle = async () => {
     try {
-      const client = getClient("sepolia");
-
-      const result = await client.readContract({
+      const tx = await walletClient.writeContract({
         abi: abi,
         address: String(contractAddress["11155111"]),
         functionName: "enterRaffle",
         account: "0xCC2a0cd3b5762126C460b73417Fe6a3bD0Ef8beD",
         value: parseEther("0.0008"),
       });
-
-      console.log("Transaction Hash:", result);
+      // await walletClient.writeContract(request)
+      console.log("Transaction sent:", tx);
     } catch (error) {
-      console.error("Error funding raffle:", error);
+      console.error("Error executing contract function:", error);
     }
   };
 
@@ -60,7 +61,7 @@ const EnterRaffle = () => {
         )}
       </div>
       <div className="text-center mt-3">
-        <button className="bg-white" onClick={fund}>
+        <button className="bg-white" onClick={enterRaffle}>
           Fund
         </button>
       </div>
