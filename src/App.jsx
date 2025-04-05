@@ -9,7 +9,6 @@ import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <Web3Provider>
-      <Navbar/>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

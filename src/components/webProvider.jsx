@@ -6,24 +6,23 @@ import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 
 export const config = createConfig(
   getDefaultConfig({
-    chains: [mainnet, sepolia], // Added Sepolia testnet
+    chains: [sepolia],
     transports: {
-      [mainnet.id]: http(
-        `https://eth-mainnet.g.alchemy.com/v2/${
-          import.meta.env.VITE_ALCHEMY_ID
-        }`
-      ),
+      // [mainnet.id]: http(
+      //   `https://eth-mainnet.g.alchemy.com/v2/${
+      //     import.meta.env.VITE_ALCHEMY_ID
+      //   }`
+      // ),
       [sepolia.id]: http(
-        `https://eth-sepolia.g.alchemy.com/v2/${
-          import.meta.env.VITE_ALCHEMY_ID
-        }`
+        // `https://eth-sepolia.g.alchemy.com/v2/${
+        //   import.meta.env.VITE_ALCHEMY_ID
+        // }`
       ),
     },
     walletConnectProjectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID,
     appName: "Your App Name",
     appDescription: "Your App Description",
     appUrl: "http://localhost:5173",
-    // appIcon: "https://your-app-url.com/logo.png",
   })
 );
 
