@@ -34,17 +34,17 @@ const Home = () => {
             className="flex flex-col items-center text-center"
           >
             <div className="mb-6 flex items-center justify-center">
-              <div className="h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mr-4">
-                <FaTrophy className="text-3xl text-white" />
+              <div className="md:h-16 md:w-16 h-12 w-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mr-4">
+                <FaTrophy className="text-2xl md:text-3xl text-white" />
               </div>
-              <h1 className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+              <h1 className="text-4xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
                 CryptoLottery
               </h1>
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Decentralized Lottery System</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-white">Decentralized Lottery System</h2>
             
-            <p className="text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed">
               A transparent and fair lottery system powered by blockchain technology. 
               Try your luck and win big with complete transparency!
             </p>
@@ -57,13 +57,13 @@ const Home = () => {
             >
               <Link 
                 to="/dashboard" 
-                className="px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg font-medium text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all transform hover:-translate-y-1"
+                className="px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg font-medium text-base md:text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all transform hover:-translate-y-1"
               >
                 Enter Lottery
               </Link>
               <Link 
                 to="/dashboard" 
-                className="px-10 py-4 border border-purple-500/30 rounded-lg font-medium text-lg hover:bg-purple-500/10 transition-all transform hover:-translate-y-1"
+                className="px-10 py-4 border border-purple-500/30 rounded-lg font-medium text-base md:text-lg hover:bg-purple-500/10 transition-all transform hover:-translate-y-1"
               >
                 Dashboard
               </Link>
@@ -77,7 +77,7 @@ const Home = () => {
       </div>
 
       {/* Features Section */}
-      <div id="features" className="container mx-auto px-4 py-24">
+      {/* <div id="features" className="container mx-auto px-4 py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ const Home = () => {
               <div className="bg-blue-500/20 p-4 rounded-xl inline-block mb-6 group-hover:bg-blue-500/30 transition-all">
                 <FaRandom className="text-4xl text-blue-400 group-hover:text-blue-300" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors">Provably Fair</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors">Provably Fair</h3>
               <p className="text-gray-300 leading-relaxed">Our lottery uses verifiable random functions on the blockchain to ensure complete fairness in winner selection.</p>
             </motion.div>
             
@@ -106,7 +106,7 @@ const Home = () => {
               <div className="bg-purple-500/20 p-4 rounded-xl inline-block mb-6 group-hover:bg-purple-500/30 transition-all">
                 <FaShieldAlt className="text-4xl text-purple-400 group-hover:text-purple-300" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-300 transition-colors">Secure & Transparent</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-purple-300 transition-colors">Secure & Transparent</h3>
               <p className="text-gray-300 leading-relaxed">All transactions and lottery operations are recorded on the blockchain for complete transparency.</p>
             </motion.div>
             
@@ -118,12 +118,12 @@ const Home = () => {
               <div className="bg-pink-500/20 p-4 rounded-xl inline-block mb-6 group-hover:bg-pink-500/30 transition-all">
                 <FaEthereum className="text-4xl text-pink-400 group-hover:text-pink-300" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-pink-300 transition-colors">Instant Payouts</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-pink-300 transition-colors">Instant Payouts</h3>
               <p className="text-gray-300 leading-relaxed">Winners receive their prizes automatically through smart contracts with no delays or intermediaries.</p>
             </motion.div>
           </div>
         </motion.div>
-      </div>
+      </div> */}
 
       {/* CTA Section */}
       <div className="container mx-auto px-4 py-24">
@@ -137,7 +137,7 @@ const Home = () => {
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
           
-          <h2 className="text-4xl font-bold text-center mb-6">Ready to Try Your Luck?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Ready to Try Your Luck?</h2>
           <p className="text-center text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             Join thousands of players in our decentralized lottery system and experience the future of fair gaming.
           </p>
@@ -145,7 +145,7 @@ const Home = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link 
                 to="/dashboard" 
-                className="px-12 py-5 bg-gradient-to-r from-purple-600 to-blue-500 rounded-xl font-medium text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all"
+                className="px-12 py-5 bg-gradient-to-r from-purple-600 to-blue-500 rounded-xl font-medium text-base md:text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all"
               >
                 Enter Now
               </Link>
@@ -161,7 +161,7 @@ const Home = () => {
             <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mr-3">
               <FaTrophy className="text-lg text-white" />
             </div>
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            <span className="text-lg md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
               CryptoLotto
             </span>
           </div>
